@@ -1,10 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
-
-export interface BoxCastPlayerProps {
-  channelId: string;
-  broadcastId: string;
-}
+import { BoxCastPlayerProps } from "./BoxCastPlayerProps";
 
 declare global {
   interface Window {
@@ -42,7 +37,11 @@ const loadScript = (
   });
 };
 
-const loadBroadcast = (context: any, channelId: String, broadcastId: String) => {
+const loadBroadcast = (
+  context: any,
+  channelId: String,
+  broadcastId: String
+) => {
   const options = {
     autoplay: true,
     showTitle: false,
@@ -50,7 +49,7 @@ const loadBroadcast = (context: any, channelId: String, broadcastId: String) => 
     showHighlights: false,
     showRelated: false,
     showCountdown: true,
-    selectedBroadcastId: broadcastId
+    selectedBroadcastId: broadcastId,
   };
   context.unload();
   context.loadChannel(channelId, options);
@@ -65,9 +64,9 @@ const BoxCastPlayer = (props: BoxCastPlayerProps) => {
       console.error(err);
     });
 
-    const context = window.boxcast('#boxcast-widget-broadcast');
+  const context = window.boxcast("#boxcast-widget-broadcast");
 
-    loadBroadcast(context, props.channelId, props.broadcastId)
+  loadBroadcast(context, props.channelId, props.broadcastId);
 
   return (
     <div>
