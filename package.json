@@ -1,5 +1,8 @@
 {
-  "name": "boxcast-react",
+  "name": "@obrienck/boxcast-react",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/obrienck"
+  },
   "version": "1.0.0",
   "description": "React Component for use with Boxcast",
   "scripts": {
@@ -15,7 +18,9 @@
     "@rollup/plugin-node-resolve": "^14.0.0",
     "@rollup/plugin-typescript": "^8.5.0",
     "@types/react": "^18.0.18",
+    "@types/react-helmet": "^6.1.5",
     "react": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "rollup": "^2.79.0",
     "rollup-plugin-dts": "^4.2.2",
     "tslib": "^2.4.0",
