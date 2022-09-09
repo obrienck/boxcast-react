@@ -1,5 +1,5 @@
 import React from "react";
-import { BoxCastPlayerProps } from "./BoxCastPlayerProps";
+import { IBoxCastPlayerProps } from "../../IBoxCastPlayerProps";
 
 declare global {
   interface Window {
@@ -37,11 +37,7 @@ const loadScript = (
   });
 };
 
-const loadBroadcast = (
-  context: any,
-  channelId: String,
-  broadcastId: String
-) => {
+const loadBroadcast = (context: any, channelId: String, broadcastId: String) => {
   const options = {
     autoplay: true,
     showTitle: false,
@@ -49,13 +45,13 @@ const loadBroadcast = (
     showHighlights: false,
     showRelated: false,
     showCountdown: true,
-    selectedBroadcastId: broadcastId,
+    selectedBroadcastId: broadcastId
   };
   context.unload();
   context.loadChannel(channelId, options);
 };
 
-const BoxCastPlayer = (props: BoxCastPlayerProps) => {
+const BoxCastPlayer = (props: IBoxCastPlayerProps) => {
   loadScript("https://js.boxcast.com/v3.min.js")
     .then((data) => {
       console.log("Script loaded successfully", data);
@@ -64,9 +60,9 @@ const BoxCastPlayer = (props: BoxCastPlayerProps) => {
       console.error(err);
     });
 
-  const context = window.boxcast("#boxcast-widget-broadcast");
+    const context = window.boxcast('#boxcast-widget-broadcast');
 
-  loadBroadcast(context, props.channelId, props.broadcastId);
+    loadBroadcast(context, props.channelId, props.broadcastId)
 
   return (
     <div>

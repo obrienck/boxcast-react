@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/obrienck"
   },
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "React Component for use with Boxcast",
   "scripts": {
     "rollup": "rollup -c"
