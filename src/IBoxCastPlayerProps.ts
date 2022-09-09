@@ -1,5 +1,4 @@
-export interface BoxCastPlayerProps {
+export interface IBoxCastPlayerProps {
     channelId: string;
     broadcastId: string;
   }
-  
