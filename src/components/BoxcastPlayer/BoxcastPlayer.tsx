@@ -1,5 +1,5 @@
 import React from "react";
-import { IBoxCastPlayerProps } from "../../IBoxCastPlayerProps";
+import IBoxCastPlayerProps from "../BoxcastPlayerType/IBoxCastPlayerProps";
 
 declare global {
   interface Window {
